@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create / Edit Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            background: linear-gradient(to bottom, #d1f7ff, #a0e8f0); 
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .card {
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffffcc;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .btn-space { margin-right: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="d-flex justify-content-center mt-4">
+                <button type="submit" class="btn" style="background-color:#20c997; color:#fff;">Save</button>
+                <a href="{% url 'task_list' %}" class="btn" style="background-color:#3dd5d0; color:#000; margin-left:10px;">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
